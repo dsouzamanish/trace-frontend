@@ -90,6 +90,12 @@ export default function BlockersPage() {
               <option value="Technical">Technical</option>
               <option value="Dependency">Dependency</option>
               <option value="Infrastructure">Infrastructure</option>
+              <option value="Communication">Communication</option>
+              <option value="Resource">Resource</option>
+              <option value="Knowledge">Knowledge</option>
+              <option value="Access">Access</option>
+              <option value="External">External</option>
+              <option value="Review">Review</option>
               <option value="Other">Other</option>
             </select>
           </div>

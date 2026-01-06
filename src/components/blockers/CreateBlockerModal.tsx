@@ -17,6 +17,12 @@ const categories: BlockerCategory[] = [
   'Technical',
   'Dependency',
   'Infrastructure',
+  'Communication',
+  'Resource',
+  'Knowledge',
+  'Access',
+  'External',
+  'Review',
   'Other',
 ];
 
