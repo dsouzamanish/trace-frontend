@@ -96,6 +96,7 @@ export default function BlockersPage() {
               <option value="Access">Access</option>
               <option value="External">External</option>
               <option value="Review">Review</option>
+              <option value="Customer Escalation">Customer Escalation</option>
               <option value="Other">Other</option>
             </select>
           </div>

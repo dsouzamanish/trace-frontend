@@ -48,7 +48,7 @@ export default function MyTeamPage() {
             
             const stats: BlockerStats = {
               total: blockerList.length,
-              byCategory: { Process: 0, Technical: 0, Dependency: 0, Infrastructure: 0, Communication: 0, Resource: 0, Knowledge: 0, Access: 0, External: 0, Review: 0, Other: 0 },
+              byCategory: { Process: 0, Technical: 0, Dependency: 0, Infrastructure: 0, Communication: 0, Resource: 0, Knowledge: 0, Access: 0, External: 0, Review: 0, 'Customer Escalation': 0, Other: 0 },
               bySeverity: { Low: 0, Medium: 0, High: 0 },
               byStatus: { Open: 0, Resolved: 0, Ignored: 0 },
               weeklyTrend: [],

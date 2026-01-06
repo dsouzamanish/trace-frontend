@@ -23,6 +23,7 @@ const categories: BlockerCategory[] = [
   'Access',
   'External',
   'Review',
+  'Customer Escalation',
   'Other',
 ];
 
