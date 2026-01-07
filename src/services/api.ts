@@ -34,10 +34,20 @@ api.interceptors.response.use(
   }
 );
 
+// Profile Update DTO
+export interface UpdateProfileData {
+  firstName?: string;
+  lastName?: string;
+  profilePic?: string;
+  designation?: 'Engineer' | 'Sr. Engineer' | 'Tech Lead' | 'QA' | 'Manager' | 'Other';
+  joinedDate?: string;
+}
+
 // Auth API
 export const authApi = {
   getProfile: () => api.get('/auth/me'),
   refreshToken: () => api.post('/auth/refresh'),
+  updateProfile: (data: UpdateProfileData) => api.patch('/auth/profile', data),
 };
 
 // Team Members API

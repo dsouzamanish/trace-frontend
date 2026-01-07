@@ -6,6 +6,7 @@ export interface User {
   lastName: string;
   profilePic?: string;
   designation?: string;
+  joinedDate?: string;     // Date user joined the team
   team?: string;           // Deprecated: use teamUid instead
   teamUid?: string;        // Team entry UID
   teamName?: string;       // Team name
