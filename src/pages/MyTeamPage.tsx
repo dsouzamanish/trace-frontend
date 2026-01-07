@@ -16,7 +16,9 @@ interface MemberWithStats extends TeamMember {
 
 export default function MyTeamPage() {
   const { user } = useAuth();
-  const teamName = user?.team || 'Engineering';
+  // Use teamUid if available (new), otherwise fall back to teamName (deprecated)
+  const teamUid = user?.teamUid;
+  const teamName = user?.teamName || user?.team || 'Engineering';
   const dispatch = useDispatch<AppDispatch>();
   
   const { reports: teamReports, isGenerating } = useSelector((state: RootState) => state.aiReports);
@@ -30,13 +32,15 @@ export default function MyTeamPage() {
   useEffect(() => {
     loadTeamData();
     dispatch(fetchTeamReports(teamName));
-  }, [teamName, dispatch]);
+  }, [teamUid, teamName, dispatch]);
 
   const loadTeamData = async () => {
     setIsLoading(true);
     try {
-      // Fetch team members
-      const membersRes = await teamMembersApi.getByTeam(teamName);
+      // Fetch team members - use teamUid if available (preferred), otherwise use teamName
+      const membersRes = teamUid 
+        ? await teamMembersApi.getByTeamUid(teamUid)
+        : await teamMembersApi.getByTeam(teamName);
       const teamMembers: TeamMember[] = membersRes.data;
 
       // Fetch stats for each member

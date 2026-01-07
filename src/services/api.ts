@@ -46,6 +46,7 @@ export const teamMembersApi = {
     api.get('/team-members', { params }),
   getById: (id: string) => api.get(`/team-members/${id}`),
   getByTeam: (teamName: string) => api.get(`/team-members/team/${teamName}`),
+  getByTeamUid: (teamUid: string) => api.get(`/team-members/by-team-uid/${teamUid}`),
   create: (data: Record<string, unknown>) => api.post('/team-members', data),
   update: (id: string, data: Record<string, unknown>) =>
     api.patch(`/team-members/${id}`, data),

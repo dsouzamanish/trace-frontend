@@ -6,7 +6,9 @@ export interface User {
   lastName: string;
   profilePic?: string;
   designation?: string;
-  team?: string;
+  team?: string;           // Deprecated: use teamUid instead
+  teamUid?: string;        // Team entry UID
+  teamName?: string;       // Team name
   isManager: boolean;
   managedTeams?: string[]; // UIDs of teams managed by this user
 }
@@ -31,7 +33,9 @@ export interface TeamMember {
   slackId?: string;
   profilePic?: string;
   designation?: Designation;
-  team?: string;
+  team?: string;           // Deprecated: use teamUid instead
+  teamUid?: string;        // Team entry UID
+  teamName?: string;       // Team name
   isManager?: boolean;
   joinedDate?: string;
   status?: MemberStatus;
